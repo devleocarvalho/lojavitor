@@ -1,0 +1,106 @@
+.admin-main {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--bg-light);
+    min-height: calc(100vh - 120px); /* Ajuste para rodapé e cabeçalho */
+}
+
+.admin-container {
+    background-color: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    max-width: 600px; /* Largura menor para o painel */
+    margin: var(--spacing-xl) auto;
+}
+
+#admin-title {
+    text-align: center;
+    color: var(--secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: var(--spacing-xs);
+    display: block;
+    color: var(--text);
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: var(--font-body);
+}
+
+.error-message {
+    color: #ff0000;
+    font-weight: bold;
+    text-align: center;
+    margin-top: var(--spacing-md);
+}
+
+.success-message {
+    color: #28a745;
+    font-weight: bold;
+    text-align: center;
+    margin-top: var(--spacing-md);
+}
+
+.admin-dashboard {
+    margin-top: var(--spacing-xl);
+    border-top: 1px solid var(--border-color);
+    padding-top: var(--spacing-xl);
+}
+
+.dashboard-section {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-md);
+    background-color: var(--bg-dark);
+    border-radius: 5px;
+}
+
+.dashboard-section h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+    border-bottom: 1px dashed var(--primary-light);
+    padding-bottom: var(--spacing-sm);
+}
+
+#latest-orders, #stock-list {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--spacing-md);
+}
+
+#latest-orders li, #stock-list li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px dotted var(--border-color);
+    color: var(--text);
+}
+
+#latest-orders li:last-child, #stock-list li:last-child {
+    border-bottom: none;
+}
+
+#total-sales {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+#logout-btn {
+    display: block;
+    width: 100%;
+    margin-top: var(--spacing-xl);
+}

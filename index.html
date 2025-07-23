@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitor Cosméticos | Realce Sua Beleza</title>
+    <meta name="description" content="Sua loja online de cosméticos, produtos de beleza e perfumes de alta qualidade. Descubra a melhor seleção para realçar sua beleza!">
+    
+    <!-- Fontes Google: Poppins (moderna e limpa) e Playfair Display (elegante para títulos) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Seu CSS customizado -->
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Cabeçalho Principal -->
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="#" class="site-logo">Vitor Cosméticos</a>
+            <nav class="header-nav-icons">
+                <div class="nav-icon-wrapper" id="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="nav-icon-wrapper" id="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </nav>
+        </div>
+        <!-- Barra de Busca Overlay -->
+        <div class="search-overlay" id="search-overlay">
+            <div class="container search-container">
+                <input type="text" id="search-input" placeholder="Buscar produtos, categorias..." class="search-input">
+                <button id="close-search-btn" class="close-search-btn"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção Hero (Destaque) -->
+        <section class="hero-section">
+            <div class="container hero-content">
+                <h1>Sua Essência, Nossa Beleza.</h1>
+                <p>Descubra produtos que realçam sua beleza natural e elevam sua confiança.</p>
+                <a href="#product-catalog" class="btn btn-hero">Explorar Produtos</a>
+            </div>
+        </section>
+
+        <!-- Seção de Produtos (Catálogo) -->
+        <section class="product-catalog-section container" id="product-catalog">
+            <h2 class="section-title">Nosso Catálogo Exclusivo</h2>
+            
+            <div class="filter-search-area">
+                <div class="category-filters">
+                    <button class="filter-btn active" data-value="todos">Todos</button>
+                    <button class="filter-btn" data-value="cosmeticos">Cosméticos</button>
+                    <button class="filter-btn" data-value="beleza">Beleza</button>
+                    <button class="filter-btn" data-value="perfumes">Perfumes</button>
+                </div>
+            </div>
+
+            <div class="product-grid" id="product-list">
+                <!-- PRODUTOS SERÃO CARREGADOS AQUI PELO JAVASCRIPT -->
+            </div>
+            <p id="no-products-message" class="no-products-message" style="display: none;">Nenhum produto encontrado com seus critérios.</p>
+        </section>
+    </main>
+
+    <!-- Carrinho Flutuante (Botão de Acesso Rápido) -->
+    <aside class="floating-cart-btn" id="floating-cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count" id="floating-cart-count">0</span>
+    </aside>
+
+    <!-- Modal do Carrinho -->
+    <div class="modal-overlay" id="cart-modal">
+        <div class="modal-content cart-modal-content">
+            <button class="modal-close-btn" id="close-cart-modal"><i class="fas fa-times"></i></button>
+            <h2 class="modal-title">Seu Carrinho de Compras</h2>
+            <ul id="cart-items" class="cart-items-list">
+                <!-- Itens do carrinho serão carregados aqui pelo JavaScript -->
+            </ul>
+            <p id="empty-cart-message" class="empty-cart-message">Seu carrinho está vazio.</p>
+            <div class="cart-summary">
+                <span class="cart-total-label">Total:</span>
+                <span id="cart-total-value" class="cart-total-value">R$ 0,00</span>
+            </div>
+            <a href="#" id="checkout-whatsapp" class="btn btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> Finalizar Pedido via WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Container para Notificações (simulação de vendas) -->
+    <div class="notification-container" id="notification-container"></div>
+
+    <!-- Chatbox Flutuante -->
+    <div class="chat-bubble-btn" id="chat-bubble-btn">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <div class="chatbox-container" id="chatbox-container">
+        <div class="chatbox-header">
+            <h3>Atendimento Vitor Cosméticos</h3>
+            <button class="close-chatbox-btn" id="close-chatbox-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chatbox-messages" id="chatbox-messages">
+            <div class="message bot-message">Olá! Como posso te ajudar hoje?</div>
+        </div>
+        <div class="chatbox-input-area">
+            <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+            <button id="send-chat-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section about-us">
+                <h3>Vitor Cosméticos</h3>
+                <p>Realçando sua beleza com produtos de alta qualidade e cuidado. Sua satisfação é nossa prioridade.</p>
+            </div>
+            <div class="footer-section social-links">
+                <h3>Conecte-se</h3>
+                <a href="https://wa.me/+5571991338859" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/vitorcosmeticos" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="Facebook (Link fictício)"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="footer-section contact-info">
+                <h3>Contato</h3>
+                <p>Email: contato@vitorcosmeticos.com</p>
+                <p>Telefone: (71) 99133-8859</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Vitor Cosméticos. Todos os direitos reservados.</p>
+                <p>Desenvolvido com <i class="fas fa-heart"></i> para sua beleza.</p>
+                <!-- Link da Área Administrativa -->
+                <p><a href="admin.html" class="admin-link">Área do Administrador</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Seu JavaScript customizado -->
+    <script src="js/script.js"></script>
+</body>
+</html>
