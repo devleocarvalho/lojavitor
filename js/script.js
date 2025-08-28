@@ -13,7 +13,7 @@ const products = [
 let cart = [];
 
 // Número de WhatsApp para contato
-const WHATSAPP_NUMBER = "5573991013545"; // SEU NÚMERO DE WHATSAPP AQUI
+const WHATSAPP_NUMBER = "(71) 99133-xxxx"; // SEU NÚMERO DE WHATSAPP AQUI
 
 // Seleção de elementos do DOM
 const cartCount = document.getElementById('cart-count');
